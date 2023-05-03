@@ -5,7 +5,7 @@ export const AppContext = createContext();
 
 const AppContextProvider = ({children}) => {
   const [bodyWeight, setBodyWeight] = useState("");
-  const [show, setShow] = useState(false);
+  // const [show, setShow] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
 
   const weightInputHandler = (enteredText) => {
