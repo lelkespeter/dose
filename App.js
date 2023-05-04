@@ -1,5 +1,5 @@
 import {StatusBar} from "expo-status-bar";
-import {StyleSheet, Text, View} from "react-native";
+import {StyleSheet, Text, View, Alert} from "react-native";
 import {NavigationContainer} from "@react-navigation/native";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
 
@@ -8,10 +8,15 @@ import MedicinesInCategory from "./screens/MedicinesInCategory";
 import DrugDetailsScreen from "./screens/DrugDetailsScreen";
 import AppContextProvider from "./context/AppContext";
 import StartScreen from "./screens/StartScreen";
+import IconButton from "./components/IconButton";
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+  function pressHandler() {
+    Alert.alert("pressed");
+  }
+
   return (
     <>
       <StatusBar style="light" />

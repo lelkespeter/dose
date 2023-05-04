@@ -8,18 +8,18 @@ import QuantityToGive from "../villkor/QuantityToGive";
 const DrugDetails = ({route}) => {
   const drugId = route.params.drugId;
 
-  const seledtedDrugs = DRUGS.find((lm) => lm.drugId === drugId);
+  const selectedDrug = DRUGS.find((lm) => lm.drugId === drugId);
 
-  const strength = seledtedDrugs.styrka.charAt(seledtedDrugs.styrka.length - 5);
-  const ml = DoseInMl(seledtedDrugs);
-  const dos = QuantityToGive(seledtedDrugs);
+  const strength = selectedDrug.styrka.charAt(selectedDrug.styrka.length - 5);
+  const ml = DoseInMl(selectedDrug);
+  const dos = QuantityToGive(selectedDrug);
 
   return (
     <>
       <View style={styles.container}>
         <View>
           <Text style={{color: "white"}}>
-            {seledtedDrugs.drugName} {seledtedDrugs.styrka}
+            {selectedDrug.drugName} {selectedDrug.styrka}
           </Text>
         </View>
         <View>
@@ -29,16 +29,16 @@ const DrugDetails = ({route}) => {
           <Text style={{color: "white"}}> {ml}</Text>
         </View>
         <View>
-          {seledtedDrugs.recept ? (
+          {selectedDrug.recept ? (
             <Text style={{color: "white"}}>
-              Spädning: {seledtedDrugs.recept}
+              Spädning: {selectedDrug.recept}
             </Text>
           ) : null}
         </View>
         <View>
-          {seledtedDrugs.obs ? (
+          {selectedDrug.obs ? (
             <Text style={{color: "red", fontSize: 16, fontWeight: "bold"}}>
-              OBS: {seledtedDrugs.obs}
+              OBS: {selectedDrug.obs}
             </Text>
           ) : null}
         </View>

@@ -1,10 +1,11 @@
-import {FlatList, StyleSheet, Text, View} from "react-native";
+import {FlatList, StyleSheet, Alert, View} from "react-native";
 import React, {useLayoutEffect} from "react";
 
 import {DRUGS} from "../constants/data";
 import {LMCategory} from "../constants/kategorier";
 import LMItem from "../components/LMItem";
 import {getDrugItemProps} from "../constants/DrugItemProps";
+import IconButton from "../components/IconButton";
 
 const MedicinesInCategory = ({route, navigation}) => {
   const katId = route.params.catId;
@@ -23,6 +24,18 @@ const MedicinesInCategory = ({route, navigation}) => {
       title: katTitel,
     });
   }, [katId, navigation]);
+
+  function pressHandler() {
+    Alert.alert("pressed");
+  }
+
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerRight: () => {
+        return <IconButton onPress={pressHandler} />;
+      },
+    });
+  }, []);
 
   function renderDrugs(itemData) {
     const item = itemData.item;

@@ -19,8 +19,8 @@ const AppContextProvider = ({children}) => {
   const value = {
     bodyWeight,
     weightInputHandler,
-    show,
-    setShow,
+    // show,
+    // setShow,
     searchQuery,
     setSearchQuery,
     searchHandler,
