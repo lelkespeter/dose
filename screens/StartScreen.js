@@ -25,7 +25,7 @@ const StartScreen = ({navigation}) => {
   }
 
   function pressHandler() {
-    Alert.alert("pressed");
+    navigation.navigate("Vald");
   }
 
   useLayoutEffect(() => {

@@ -26,7 +26,7 @@ const MedicinesInCategory = ({route, navigation}) => {
   }, [katId, navigation]);
 
   function pressHandler() {
-    Alert.alert("pressed");
+    navigation.navigate("Vald");
   }
 
   useLayoutEffect(() => {
